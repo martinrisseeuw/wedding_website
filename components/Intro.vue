@@ -31,6 +31,8 @@ export default {
     fadeOut (scroll_pos) {
       document.querySelector('.intro-container .bg').style.backgroundColor = `rgb(${scroll_pos - 30}, ${scroll_pos - 60}, ${scroll_pos - 20})`
       document.querySelector('.intro-container p.reveal-text').style.color = `rgb(${255 - scroll_pos}, ${355 - scroll_pos}, ${355 - scroll_pos})`
+      document.querySelector('.intro-container p.reveal-text').style.transform = `translateY(${0 + (scroll_pos / 2)}px)`
+      document.querySelector('.intro-container p.reveal-text').style.opacity = `${1 - (scroll_pos / 750)}`
     },
     handleScroll () {
       this.last_known_scroll_position = window.scrollY;
@@ -78,19 +80,6 @@ p.reveal-text
   left: -0.05em
   @include breakpoint(s)
     font-size: 1.5em
-
-// p.reveal-text
-//   font-size: 3em
-//   color: rgba(0, 0, 20, 0.6)
-//   letter-spacing: 0.4px
-//   animation-name: fade-in
-//   animation-delay: 1.1s
-//   animation-iteration-count: 1
-//   animation-duration: 2s
-//   font-weight: 500
-//   animation-fill-mode: both
-//   animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
-//   opacity: 0
 
 .reveal-text
   position: relative
