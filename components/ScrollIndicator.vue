@@ -9,7 +9,7 @@
 <style lang="sass" scoped>
   .scroll-indicator
     border-radius: 100%
-    position: absolute
+    position: fixed
     width: 50px
     height: 50px
     opacity: 1

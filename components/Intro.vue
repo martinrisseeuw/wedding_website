@@ -4,7 +4,7 @@
     <div class="gradient green"></div>
     <div class="wrapper">
       <h1 class="reveal-text display">Martim</h1>
-      <p class="reveal-text-fade">Hi, we're Martim. A digital agency that crafts high quality, usable, and unique interfaces.</p>
+      <p class="reveal-text-fade">Hi, we're Martim. A digital agency that crafts high quality usable and unique interfaces for both you and its visitors.</p>
     </div>
     <ScrollIndicator />
   </div>
@@ -94,11 +94,11 @@ p.reveal-text-fade
   &.purple
     background-color: #BE91F4
     background-image: linear-gradient(-134deg, #9CCEEB 0%, #BE91F4 100%)
-  &.green
-    background-color: #9CEAA2
-    background-image: linear-gradient(-134deg, #9CEAA2 0%, #91C6F3 100%)
-    animation: fade-in 20s linear infinite
-    animation-direction: alternate
+  // &.green
+  //   background-color: #9CEAA2
+  //   background-image: linear-gradient(-134deg, #9CEAA2 0%, #91C6F3 100%)
+  //   animation: fade-in 20s linear infinite
+  //   animation-direction: alternate
 
 @keyframes fade-in
   from

@@ -65,7 +65,9 @@ header
   bottom: 0
   left: 0
   z-index: 1
+  pointer-events: none
   &.active
+    pointer-events: initial
     .overlay
       opacity: 1
     .panel
@@ -97,5 +99,5 @@ header
       width: 10px
       background-color: #F5F5F5
     &::-webkit-scrollbar-thumb
-      background-color: rgba(0, 0, 0, 0.3)
+      background-color: rgba(0, 0, 10, 0.9)
 </style>
