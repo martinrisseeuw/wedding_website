@@ -78,7 +78,7 @@ header
     top: 0
     height: 100%
     width: 100%
-    background: rgba(0, 0, 10, 0.6)
+    background-image: linear-gradient(-134deg, #9CCEEA 0%, #BD91F3 100%)
     transition: opacity 0.3s ease-in
     opacity: 0
   .panel
@@ -94,10 +94,10 @@ header
     height: calc(100vh - 61px)
     overflow: auto
     &::-webkit-scrollbar-track
-      background-color: #F5F5F5
+      background-color: #000
     &::-webkit-scrollbar
-      width: 10px
-      background-color: #F5F5F5
+      width: 5px
+      background-color: #fff
     &::-webkit-scrollbar-thumb
-      background-color: rgba(0, 0, 10, 0.9)
+      background-color: rgba(255, 255, 255, 1)
 </style>

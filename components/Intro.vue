@@ -1,10 +1,8 @@
 <template>
-  <div class="container">
-    <div class="gradient purple"></div>
-    <div class="gradient green"></div>
+  <div class="container intro-container">
+    <div class="bg"></div>
     <div class="wrapper">
-      <h1 class="reveal-text display">Martim</h1>
-      <p class="reveal-text-fade">Hi, we're Martim. A digital agency that crafts high quality usable and unique interfaces for both you and its visitors.</p>
+      <p class="reveal-text">Hi, we're Martim. A digital agency that crafts high quality usable and unique interfaces for both you and its visitors.</p>
     </div>
     <ScrollIndicator />
   </div>
@@ -16,11 +14,40 @@ import ScrollIndicator from '~components/ScrollIndicator.vue'
 export default {
   components: {
     ScrollIndicator
+  },
+  data () {
+    return {
+      last_known_scroll_position: 0,
+      ticking: false
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    fadeOut (scroll_pos) {
+      document.querySelector('.intro-container .bg').style.backgroundColor = `rgb(${scroll_pos - 30}, ${scroll_pos - 60}, ${scroll_pos - 20})`
+      document.querySelector('.intro-container p.reveal-text').style.color = `rgb(${255 - scroll_pos}, ${355 - scroll_pos}, ${355 - scroll_pos})`
+    },
+    handleScroll () {
+      this.last_known_scroll_position = window.scrollY;
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+          this.fadeOut(this.last_known_scroll_position);
+          this.ticking = false;
+        });
+      }
+      this.ticking = true;
+    }
   }
 }
 </script>
 
 <style lang="sass" scoped>
+@import '../assets/css/_variables.scss'
 .container
   display: flex
   align-items: center
@@ -40,29 +67,30 @@ export default {
   animation-fill-mode: both
   animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
 
-
-h1.reveal-text
-  font-size: 120px
-  color: #FFFFFF
+p.reveal-text
+  font-size: 3em
+  font-weight: 500
+  line-height: 1.6
+  color: #fff
   letter-spacing: 0
   display: inline-block
-  white-space: nowrap
   margin: 0
-  line-height: 120px
   left: -0.05em
-  text-transform: uppercase
+  @include breakpoint(s)
+    font-size: 1.5em
 
-p.reveal-text-fade
-  font-size: 21px
-  color: #FFFFFF
-  letter-spacing: 0.4px
-  animation-name: fade-in
-  animation-delay: 1.1s
-  animation-iteration-count: 1
-  animation-duration: 2s
-  animation-fill-mode: both
-  animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
-  opacity: 0
+// p.reveal-text
+//   font-size: 3em
+//   color: rgba(0, 0, 20, 0.6)
+//   letter-spacing: 0.4px
+//   animation-name: fade-in
+//   animation-delay: 1.1s
+//   animation-iteration-count: 1
+//   animation-duration: 2s
+//   font-weight: 500
+//   animation-fill-mode: both
+//   animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
+//   opacity: 0
 
 .reveal-text
   position: relative
@@ -79,26 +107,19 @@ p.reveal-text-fade
   left: 0
   right: 0
   bottom: 0
-  background-color: #9CCEEB
+  background-color: #fff
   transform: scaleX(0)
   transform-origin: 0 50%
   pointer-events: none
   animation-name: revealer-text
 
-.gradient
+.bg
   width: 100%
   height: 100%
   position: absolute
   left: 0
   top: 0
-  &.purple
-    background-color: #BE91F4
-    background-image: linear-gradient(-134deg, #9CCEEB 0%, #BE91F4 100%)
-  // &.green
-  //   background-color: #9CEAA2
-  //   background-image: linear-gradient(-134deg, #9CEAA2 0%, #91C6F3 100%)
-  //   animation: fade-in 20s linear infinite
-  //   animation-direction: alternate
+  background-color: #000
 
 @keyframes fade-in
   from

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col">
       <div class="content">
-        <h1 class="display">Homepinr</h1>
+        <h1>Homepinr</h1>
         <p>A story of one of the biggest electronic dance festivals in the world.</p>
         <nuxt-link to="/about" class="view">View project
           <svg width="24" height="22" viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,6 @@
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
 .container
-  min-height: 100vh
   display: flex
   padding: 80px
   .col

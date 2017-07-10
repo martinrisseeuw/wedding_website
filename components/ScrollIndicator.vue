@@ -17,7 +17,7 @@
     bottom: 20px
     cursor: pointer
     opacity: 0
-    animation: opacity 0.75s 5s ease-in
+    animation: opacity 0.75s 3s ease-in
     animation-fill-mode: forwards
     span
       display: flex
