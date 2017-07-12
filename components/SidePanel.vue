@@ -48,8 +48,8 @@ export default {
 @import '../assets/css/_variables.scss'
 header
   width: 100%
-  height: 61px
-  border-bottom: 1px solid $light-grey
+  height: 60px
+  box-shadow: 0 10px 20px 0 rgba(0,0,20,0.05)
 .close
   position: absolute
   left: $gutter / 2
@@ -64,12 +64,12 @@ header
   top: 0
   bottom: 0
   left: 0
-  z-index: 1
+  z-index: 2
   pointer-events: none
   &.active
     pointer-events: initial
     .overlay
-      opacity: 1
+      opacity: 0.8
     .panel
       transform: none
   .overlay

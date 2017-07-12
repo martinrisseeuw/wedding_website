@@ -4,7 +4,9 @@
       <About />
     </SidePanel>
     <intro />
-    <ProjectSlider />
+    <div class="wrapper">
+      <ProjectSlider />
+    </div>
   </section>
 </template>
 

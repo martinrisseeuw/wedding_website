@@ -64,7 +64,7 @@ export default {
   padding: 80px 0
   .col
     width: 100%
-    max-width: 50%
+    max-width: 30%
     display: flex
     align-items: center
     img
@@ -79,13 +79,14 @@ export default {
       font-size: 0.8125em
       color: #0000FF
       letter-spacing: 0
+
+  .image-col
+    max-width: 70%
 .view
   display: flex
   align-items: center
   svg
     margin-left: 10px
-
-// .image-col,
 // .image-col::after
 //   animation-delay: 0.5s
 //   animation-iteration-count: 1

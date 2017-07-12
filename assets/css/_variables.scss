@@ -19,6 +19,8 @@ $shadow: 0 0 40px 0 rgba(0, 50, 50, 0.15);
 $spacing: 0.05em;
 
 $wrapper: 1040px;
+$wrapper-small: 940px;
+$wrapper-xsmall: 640px;
 
 @mixin breakpoint($point) {
   @if $point == xl {

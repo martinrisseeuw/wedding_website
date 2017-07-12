@@ -2,7 +2,8 @@
   <div class="container intro-container">
     <div class="bg"></div>
     <div class="wrapper">
-      <p class="reveal-text">Hi, we're Martim. A digital agency that crafts high quality usable and unique interfaces for both you and its visitors.</p>
+      <p class="reveal-text">Hi, we're Martim. A <strong>digital agency</strong> that crafts high quality usable and unique <strong>interfaces</strong> for both you and its visitors.</p>
+      <p class="fade-in-text">Previously / Clients Last.fm, SoundCloud, QuestionMark, ID&T, Openthings, Secrid</p>
     </div>
     <ScrollIndicator />
   </div>
@@ -29,9 +30,9 @@ export default {
   },
   methods: {
     fadeOut (scroll_pos) {
-      document.querySelector('.intro-container .bg').style.backgroundColor = `rgb(${scroll_pos - 30}, ${scroll_pos - 60}, ${scroll_pos - 20})`
-      document.querySelector('.intro-container p.reveal-text').style.color = `rgb(${255 - scroll_pos}, ${355 - scroll_pos}, ${355 - scroll_pos})`
-      document.querySelector('.intro-container p.reveal-text').style.transform = `translateY(${0 + (scroll_pos / 2)}px)`
+      document.querySelector('.intro-container .bg').style.backgroundColor = `rgb(${scroll_pos}, ${scroll_pos}, ${scroll_pos})`
+      document.querySelector('.intro-container p.reveal-text').style.color = `rgb(${255 - scroll_pos}, ${255 - scroll_pos}, ${255 - scroll_pos})`
+      document.querySelector('.intro-container .wrapper').style.transform = `translateY(${0 + (scroll_pos / 4)}px)`
       document.querySelector('.intro-container p.reveal-text').style.opacity = `${1 - (scroll_pos / 750)}`
     },
     handleScroll () {
@@ -59,7 +60,7 @@ export default {
   flex-direction: column
 
 .wrapper
-  max-width: 600px
+  max-width: $wrapper-xsmall
 
 .reveal-text,
 .reveal-text:after
@@ -80,6 +81,14 @@ p.reveal-text
   left: -0.05em
   @include breakpoint(s)
     font-size: 1.5em
+
+.fade-in-text
+  color: #fff
+  opacity: 0
+  animation: fade-in 3s 1s linear
+  animation-fill-mode: forwards
+  font-size: 1em
+
 
 .reveal-text
   position: relative
