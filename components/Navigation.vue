@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     changeNav (scroll_pos) {
-      (scroll_pos > 200 ? this.menuActive = true : this.menuActive = false)
+      (scroll_pos > 300 ? this.menuActive = true : this.menuActive = false)
     },
     handleScroll () {
       this.last_known_scroll_position = window.scrollY;
@@ -52,9 +52,9 @@ export default {
   padding: 0 ($gutter / 2)
   display: flex
   align-items: center
-  box-shadow: 0 10px 20px 0 rgba(0,0,20,0.05)
   transition: background 0.1s ease-out
   &.active
+    box-shadow: 0 10px 20px 0 rgba(0,0,100,0.05)
     background: #fff
     .logo,
     a
@@ -69,6 +69,7 @@ export default {
     display: inline-block
     margin-left: ($gutter)
     a
+      font-weight: 400
       color: rgba(255, 255, 255, 1)
       transition: color 0.5s ease-out
 </style>
