@@ -20,6 +20,17 @@
                 </g>
               </svg>
             </nuxt-link>
+            <nuxt-link to="/about" class="view">View more projects
+              <svg width="24" height="22" viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <g stroke-linecap="round" stroke="#00F">
+                  <path stroke-linejoin="round" d="M12 21l10.92-10.513L12 .5"/>
+                  <path d="M22.92 10.5H1.08"/>
+                </g>
+                <path d="M-1-2h26v25H-1z"/>
+                </g>
+              </svg>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -71,6 +82,7 @@ export default {
     border-top: 1px solid $light-grey
   .wrapper
     display: flex
+    flex-wrap: wrap
     &::before
       content: "Last project"
       font-size: 18px
@@ -99,12 +111,21 @@ export default {
       max-width: 100%
     &:last-child
       padding-left: $gutter / 2
+      padding-right: 0
+      padding-top: $gutter
     .content
       max-width: 380px
     a
       font-size: 0.8125em
       color: #0000FF
       letter-spacing: 0
+      margin-bottom: 1em
+      svg
+        transition: 0.25s ease-in
+      &:hover
+        opacity: 0.7
+        svg
+          transform: translateX(3px)
 
   .image-col
     max-width: 70%

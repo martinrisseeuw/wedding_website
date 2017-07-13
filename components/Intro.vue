@@ -3,7 +3,7 @@
     <div class="bg"></div>
     <div class="wrapper">
       <p class="reveal-text">Hi, we're Martim. A <strong>digital agency</strong> that crafts high quality usable and unique <strong>interfaces</strong> for both you and its visitors.</p>
-      <p class="fade-in-text">Previously / Clients Last.fm, SoundCloud, QuestionMark, ID&T, Openthings, Secrid</p>
+      <p class="fade-in-text"><strong>Previously / Clients</strong> Last.fm, SoundCloud, QuestionMark, ID&T, Openthings, Secrid, and some others</p>
     </div>
     <ScrollIndicator />
   </div>
@@ -56,7 +56,6 @@ export default {
   align-items: center
   justify-content: center
   min-height: 100vh
-  padding: 80px
   flex-direction: column
 
 .wrapper

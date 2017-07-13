@@ -49,7 +49,7 @@ export default {
 header
   width: 100%
   height: 60px
-  box-shadow: 0 10px 20px 0 rgba(0,0,20,0.05)
+  box-shadow: 0 10px 20px 0 rgba(0,0,100,0.05)
 .close
   position: absolute
   left: $gutter / 2

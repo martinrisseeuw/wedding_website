@@ -1,9 +1,12 @@
 <template>
   <div class="container" :class="{active: menuActive}">
-    <nuxt-link to="/"><h1 class="logo">Martim</h1></nuxt-link>
-    <ul class="menu">
-      <li><nuxt-link to="/about">About</nuxt-link></li>
-    </ul>
+    <div class="wrapper">
+      <nuxt-link to="/"><h1 class="logo">Martim</h1></nuxt-link>
+      <ul class="menu">
+        <li><nuxt-link to="/work">Work</nuxt-link></li>
+        <li><nuxt-link to="/about">About</nuxt-link></li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -48,14 +51,19 @@ export default {
   left: 0
   top: 0
   width: 100%
-  height: 60px
-  padding: 0 ($gutter / 2)
-  display: flex
-  align-items: center
   transition: background 0.1s ease-out
+  .wrapper
+    display: flex
+    align-items: center
+    height: 60px
+    max-width: 100%
+    transition: 0.5s cubic-bezier(.54,0,.33,1)
   &.active
     box-shadow: 0 10px 20px 0 rgba(0,0,100,0.05)
     background: #fff
+    .wrapper
+      max-width: 1040px
+
     .logo,
     a
       color: rgba(0, 0, 20, 1)
@@ -69,7 +77,6 @@ export default {
     display: inline-block
     margin-left: ($gutter)
     a
-      font-weight: 400
       color: rgba(255, 255, 255, 1)
       transition: color 0.5s ease-out
 </style>
