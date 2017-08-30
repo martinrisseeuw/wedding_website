@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700')
+
+html
+  font-size: 100%
+
+body
+  font-family: 'avenir next', 'montserrat', 'Open Sans', sans-serif
+  font-size: 100%
+  font-weight: 400
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+
+.page-title
+  font-size: 2.5em
+
+.title-margin
+  margin-bottom: 0.5em
+
+.display
+  font-family: Rubik-Black
+
+h1,
+.alpha,
+h2,
+.beta,
+h3,
+.gamma,
+h4,
+.delta,
+h5,
+.epsilon,
+h6,
+.zeta
+  line-height: 1.4
+  font-weight: 600
+
+h1,
+.alpha
+  font-size: 1.75em
+  line-height: 1.4
+
+h2,
+.beta
+  font-size: 2em
+  color: #7D7D87
+  line-height: 1.5
+
+h3,
+.gamma
+  font-size: 1.4875em
+
+h4,
+.delta
+  font-size: 1.2875em
+
+h5,
+.epsilon
+  font-size: 1.0875em
+
+h6,
+.zeta
+  font-size: 0.875em
+
+p,
+blockquote
+  hyphens: none
+
+
+p
+  line-height: 1.7375em
+  margin-bottom: 1em
+  font-size: 1.125em
+  color: #7D7D87
+
+dd,
+dt,
+li
+  line-height: 1.6em
+  margin: 0
+
+a
+  opacity: 1
+  text-decoration: none
+  transition: opacity 0.3s ease-in-out
+  color: #0000FF
+  letter-spacing: 0
+  font-weight: 600
+
+
+strong
+  font-weight: 700
+
+.reveal-text,
+.reveal-text:after
+  animation-delay: 0.5s
+  animation-iteration-count: 1
+  animation-duration: 0.6s
+  animation-fill-mode: both
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
+  display: inline-block
+
+.fade-in-text
+  opacity: 0
+  animation: fade-in 3s 1s linear
+  animation-fill-mode: forwards
+  font-size: 1em
+
+
+.reveal-text
+  position: relative
+  display: block
+  user-select: none
+  animation-name: reveal-text
+  animation: reveal-text 1s 1s cubic-bezier(.54,0,.33,1)
+  animation-fill-mode: forwards
+  clip-path: inset(0 100% 0 0)
+  cursor: default
+
+.reveal-text:after
+  content: ""
+  position: absolute
+  z-index: 999
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: #222
+  transform: scaleX(0)
+  transform-origin: 0 50%
+  pointer-events: none
+  animation: revealer-text 1s 1s cubic-bezier(.54,0,.33,1)
+
+.center
+  text-align: center

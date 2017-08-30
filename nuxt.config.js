@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'Martim',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -14,10 +14,13 @@ module.exports = {
     ]
   },
   css: [
-    '~assets/css/reset.scss',
-    '~assets/css/forms.scss',
-    '~assets/css/animation.scss',
-    '~assets/css/typography.scss',
+    '~assets/css/reset.sass',
+    '~assets/css/_variables.scss',
+    '~assets/css/flexbox.sass',
+    '~assets/css/lego.scss',
+    '~assets/css/animation.sass',
+    '~assets/css/buttons.sass',
+    '~assets/css/typography.sass',
     '~assets/css/main.sass'
   ],
   /*

@@ -1,5 +1,7 @@
 <template>
   <section class="container">
+
+    <Navigation />
     <SidePanel :active="showSidePanel" v-on:close="handleSidePanelClose">
       <About />
     </SidePanel>
@@ -9,10 +11,11 @@
 </template>
 
 <script>
-import Intro from '~components/Intro.vue'
-import SidePanel from '~components/SidePanel.vue'
-import About from '~components/About.vue'
-import ProjectSlider from '~components/ProjectSlider.vue'
+import Intro from '~/components/Intro.vue'
+import SidePanel from '~/components/SidePanel.vue'
+import About from '~/components/About.vue'
+import ProjectSlider from '~/components/ProjectSlider.vue'
+import Navigation from '~/components/Navigation.vue'
 
 export default {
   data () {
@@ -31,7 +34,8 @@ export default {
     Intro,
     SidePanel,
     About,
-    ProjectSlider
+    ProjectSlider,
+    Navigation
   },
   beforeRouteLeave (to, from, next) {
     // Show a modal whenever we navigate to an auth page

@@ -1,9 +1,19 @@
 <template>
-  <div class="container" :class="{active: menuActive}">
-    <div class="wrapper">
-      <nuxt-link to="/"><h1 class="logo">Martim</h1></nuxt-link>
+  <div class="container" :class="{active: menuActive, projectnav: projectnav, sticky: menuSticky}">
+    <div class="wrapper element no-bottom-top">
+      <nuxt-link to="/" class="logo">
+        <h1 hidden>Martim</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 40 32">
+          <g fill-rule="evenodd">
+            <rect width="8" height="32"/>
+            <rect width="8" height="32" x="12"/>
+            <rect width="8" height="20" x="24" y="12"/>
+            <rect width="16" height="8" x="24" y="12"/>
+            <rect width="8" height="8" x="24"/>
+          </g>
+        </svg>      
+      </nuxt-link>
       <ul class="menu">
-        <li><nuxt-link to="/work">Work</nuxt-link></li>
         <li><nuxt-link to="/about">About</nuxt-link></li>
       </ul>
     </div>
@@ -16,9 +26,11 @@ export default {
     return {
       last_known_scroll_position: 0,
       menuActive: false,
-      ticking: false
+      ticking: false,
+      menuSticky: false
     }
   },
+  props: ['projectnav', 'stickyHeight'],
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
@@ -27,7 +39,18 @@ export default {
   },
   methods: {
     changeNav (scroll_pos) {
-      (scroll_pos > 300 ? this.menuActive = true : this.menuActive = false)
+      if(scroll_pos > 70) {
+        this.menuActive = true;
+      } else {
+        this.menuActive = false
+      }
+      if(scroll_pos > this.stickyHeight) {
+        this.menuSticky = true;
+        document.body.classList.add('sticky-header');
+      } else {
+        this.menuSticky = false;
+        document.body.classList.remove('sticky-header');
+      }
     },
     handleScroll () {
       this.last_known_scroll_position = window.scrollY;
@@ -43,32 +66,34 @@ export default {
 }
 </script>
 
+<style  lang="sass">
+</style>
+
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
 .container
   position: fixed
   z-index: 2
   left: 0
+  right: 0
   top: 0
-  width: 100%
+  width: 100vw
   transition: background 0.1s ease-out
+  transition: 0.2s cubic-bezier(.54,0,.33,1)
   .wrapper
     display: flex
     align-items: center
-    height: 60px
-    max-width: 100%
+    height: 88px
     transition: 0.5s cubic-bezier(.54,0,.33,1)
   &.active
-    box-shadow: 0 10px 20px 0 rgba(0,0,100,0.05)
     background: #fff
-    .wrapper
-      max-width: 1040px
-
-    .logo,
-    a
-      color: rgba(0, 0, 20, 1)
+    // box-shadow: 0 1px 2px rgba(0, 0, 20, 0.1)
+  &.projectnav
+    position: relative
+  &.sticky
+    position: fixed
 .logo
-  color: #fff
+  color: rgba(0, 0, 20, 1)
   font-size: 1em
   transition: color 0.5s ease-out
 .menu
@@ -77,6 +102,6 @@ export default {
     display: inline-block
     margin-left: ($gutter)
     a
-      color: rgba(255, 255, 255, 1)
+      color: rgba(0, 0, 20, 1)
       transition: color 0.5s ease-out
 </style>

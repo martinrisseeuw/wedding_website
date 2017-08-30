@@ -5,7 +5,7 @@
   "author": "Nuxt",
   "private": true,
   "dependencies": {
-    "nuxt": "latest"
+    "nuxt": "^1.0.0-rc7"
   },
   "scripts": {
     "dev": "nuxt",

@@ -24,9 +24,6 @@ export default {
   },
   methods: {
     closeHandler () {
-      setTimeout(function () {
-        console.log(this)
-      }, 3000)
       this.$emit('close')
     },
     escapeKeyListener (event) {
@@ -49,7 +46,7 @@ export default {
 header
   width: 100%
   height: 60px
-  box-shadow: 0 10px 20px 0 rgba(0,0,100,0.05)
+  border-bottom: 1px solid $light-grey
 .close
   position: absolute
   left: $gutter / 2
@@ -78,7 +75,7 @@ header
     top: 0
     height: 100%
     width: 100%
-    background-image: linear-gradient(-134deg, #9CCEEA 0%, #BD91F3 100%)
+    background: rgba(0, 0, 20, 0.7)
     transition: opacity 0.3s ease-in
     opacity: 0
   .panel

@@ -1,36 +1,15 @@
 <template>
   <div class="container">
-    <div class="intro-container">
-      <div class="wrapper">
-        <div class="col image-col">
-          <img src="/homepinr-thumb.png" />
-        </div>
-        <div class="col">
+    <div class="lego-container b-t-b project-container">
+      <div class="wrapper lego-container">
+        <div class="col col-12-5 item">
+          <header>
+            <img src="/homepinr-thumb.png" />
+          </header>
           <div class="content">
             <h2>Homepinr</h2>
             <p>A new way for people to find homes</p>
-            <nuxt-link to="/about" class="view">View project
-              <svg width="24" height="22" viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" fill-rule="evenodd">
-                  <g stroke-linecap="round" stroke="#00F">
-                  <path stroke-linejoin="round" d="M12 21l10.92-10.513L12 .5"/>
-                  <path d="M22.92 10.5H1.08"/>
-                </g>
-                <path d="M-1-2h26v25H-1z"/>
-                </g>
-              </svg>
-            </nuxt-link>
-            <nuxt-link to="/about" class="view">View more projects
-              <svg width="24" height="22" viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg">
-                <g fill="none" fill-rule="evenodd">
-                  <g stroke-linecap="round" stroke="#00F">
-                  <path stroke-linejoin="round" d="M12 21l10.92-10.513L12 .5"/>
-                  <path d="M22.92 10.5H1.08"/>
-                </g>
-                <path d="M-1-2h26v25H-1z"/>
-                </g>
-              </svg>
-            </nuxt-link>
+            <ArrowBtn text="View project" link="/project" />
           </div>
         </div>
       </div>
@@ -39,7 +18,7 @@
 </template>
 
 <script>
-import ScrollIndicator from '~components/ScrollIndicator.vue'
+import ArrowBtn from '~/components/ArrowBtn.vue'
 
 export default {
   data () {
@@ -54,20 +33,8 @@ export default {
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
   },
-  methods: {
-    fadeOut (scroll_pos) {
-      // document.querySelector('.image-col').style.transform = `translateY(${155 - (scroll_pos / 3)}px)`
-    },
-    handleScroll () {
-      this.last_known_scroll_position = window.scrollY;
-      if (!this.ticking) {
-        window.requestAnimationFrame(() => {
-          this.fadeOut(this.last_known_scroll_position);
-          this.ticking = false;
-        });
-      }
-      this.ticking = true;
-    }
+  components: {
+    ArrowBtn,
   }
 }
 </script>
@@ -76,15 +43,14 @@ export default {
 @import '../assets/css/_variables.scss'
 .container
   padding-top: 60px
-  .intro-container
+  .project-container
     width: 100%
-    padding: 80px 0
     border-top: 1px solid $light-grey
   .wrapper
     display: flex
     flex-wrap: wrap
     &::before
-      content: "Last project"
+      content: "A selection of our work"
       font-size: 18px
       line-height: 16px
       background: #FFFFFF
@@ -94,11 +60,6 @@ export default {
       padding: 0 19px
       color: $medium-grey
   .col
-    width: 100%
-    max-width: 30%
-    display: flex
-    align-items: flex-start
-    padding-right: $gutter / 2
     h2
       font-size: 21px
       color: rgba(0,0,10,0.80)
@@ -109,17 +70,17 @@ export default {
       line-height: 27px
     img
       max-width: 100%
-    &:last-child
-      padding-left: $gutter / 2
-      padding-right: 0
-      padding-top: $gutter
     .content
-      max-width: 380px
+      width: 100%
+      text-align: center
+      padding: 20px
+
     a
       font-size: 0.8125em
       color: #0000FF
       letter-spacing: 0
       margin-bottom: 1em
+      justify-content: center
       svg
         transition: 0.25s ease-in
       &:hover

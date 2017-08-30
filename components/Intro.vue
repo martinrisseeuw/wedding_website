@@ -1,144 +1,107 @@
 <template>
-  <div class="container intro-container">
-    <div class="bg"></div>
-    <div class="wrapper">
-      <p class="reveal-text">Hi, we're Martim. A <strong>digital agency</strong> that crafts high quality usable and unique <strong>interfaces</strong> for both you and its visitors.</p>
-      <p class="fade-in-text"><strong>Previously / Clients</strong> Last.fm, SoundCloud, QuestionMark, ID&T, Openthings, Secrid, and some others</p>
+    <div class="intro-container">
+      <div class="wrapper lego-container">
+        <div class="col col-12-5 intro-col">
+          <div class="content">
+            <h2 class="reveal-text">Hi, we're Martim. A digital agency that crafts high quality and usable interfaces for bot you and its visitors</h2>
+          </div>
+          <article class="intro-project">
+            <h1>Homepinr</h1>
+            <h2>A new way to find homes</h2>
+            <ArrowBtn text="View project" link="/project" />
+          </article>
+        </div>
+        <div class="col-12-6 auto-left">
+          <img src="/home-image.png" />
+        </div>
+      </div>
     </div>
-    <ScrollIndicator />
-  </div>
 </template>
 
 <script>
-import ScrollIndicator from '~components/ScrollIndicator.vue'
+import ArrowBtn from '~/components/ArrowBtn.vue'
 
 export default {
-  components: {
-    ScrollIndicator
-  },
   data () {
     return {
       last_known_scroll_position: 0,
       ticking: false
     }
   },
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-    fadeOut (scroll_pos) {
-      document.querySelector('.intro-container .bg').style.backgroundColor = `rgb(${scroll_pos}, ${scroll_pos}, ${scroll_pos})`
-      document.querySelector('.intro-container p.reveal-text').style.color = `rgb(${255 - scroll_pos}, ${255 - scroll_pos}, ${255 - scroll_pos})`
-      document.querySelector('.intro-container .wrapper').style.transform = `translateY(${0 + (scroll_pos / 4)}px)`
-      document.querySelector('.intro-container p.reveal-text').style.opacity = `${1 - (scroll_pos / 750)}`
-    },
-    handleScroll () {
-      this.last_known_scroll_position = window.scrollY;
-      if (!this.ticking) {
-        window.requestAnimationFrame(() => {
-          this.fadeOut(this.last_known_scroll_position);
-          this.ticking = false;
-        });
-      }
-      this.ticking = true;
-    }
+  components: {
+    ArrowBtn
   }
 }
 </script>
 
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
+.intro-container
+  padding: 90px 0 40px
+
+.intro-project
+  padding: 40px 0
+  margin-top: 60px
+  border-top: 1px solid $light-grey
+  &::before
+    content: "A selection of our work"
+    font-size: 18px
+    line-height: 16px
+    background: #FFFFFF
+    position: absolute
+    top: -10px
+    left: 0
+    padding: 0 19px 0 0
+    color: $medium-grey
+  h1
+    opacity: 0.82;
+    font-weight: 500
+    font-size: 2em;
+    color: #000000;
+    letter-spacing: 0;
+  h2
+    font-weight: 400
+    font-size: 1.5em;
+    color: #747474;
+    letter-spacing: 0;
+    margin-bottom: 10px
+img
+  max-width: 100%
 .container
+  padding-top: 60px
+  .wrapper
+    display: flex
+    flex-wrap: wrap
+  .content
+    h2
+      color: #000
+    p
+      font-size: 16px
+      color: rgba(0,0,10,0.80)
+      line-height: 27px
+    &:last-child
+      padding-left: $gutter / 2
+      padding-right: 0
+      padding-top: $gutter
+    a
+      font-size: 0.8125em
+      color: #000
+      letter-spacing: 0
+      margin-bottom: 1em
+      svg
+        transition: 0.25s ease-in
+      &:hover
+        opacity: 0.7
+        svg
+          transform: translateX(3px)
+
+  .image-col
+    max-width: 70%
+.content
+  padding-top: 80px
+.view
   display: flex
   align-items: center
-  justify-content: center
-  min-height: 100vh
-  flex-direction: column
-
-.wrapper
-  max-width: $wrapper-xsmall
-
-.reveal-text,
-.reveal-text:after
-  animation-delay: 0.5s
-  animation-iteration-count: 1
-  animation-duration: 0.6s
-  animation-fill-mode: both
-  animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
-
-p.reveal-text
-  font-size: 3em
-  font-weight: 500
-  line-height: 1.6
-  color: #fff
-  letter-spacing: 0
-  display: inline-block
-  margin: 0
-  left: -0.05em
-  @include breakpoint(s)
-    font-size: 1.5em
-
-.fade-in-text
-  color: #fff
-  opacity: 0
-  animation: fade-in 3s 1s linear
-  animation-fill-mode: forwards
-  font-size: 1em
-
-
-.reveal-text
-  position: relative
-  display: block
-  user-select: none
-  animation-name: reveal-text
-  cursor: default
-
-.reveal-text:after
-  content: ""
-  position: absolute
-  z-index: 999
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  background-color: #fff
-  transform: scaleX(0)
-  transform-origin: 0 50%
-  pointer-events: none
-  animation-name: revealer-text
-
-.bg
-  width: 100%
-  height: 100%
-  position: absolute
-  left: 0
-  top: 0
-  background-color: #000
-
-@keyframes fade-in
-  from
-    opacity: 0
-  to
-    opacity: 1
-
-@keyframes reveal-text
-  from
-    clip-path: inset(0 100% 0 0)
-  to
-    clip-path: inset(0 0 0 0)
-
-@keyframes revealer-text
-  0%, 50%
-    transform-origin: 0 50%
-  60%, 100%
-    transform-origin: 100% 50%
-  50%
-    transform: scaleX(1)
-  60%
-    transform: scaleX(1)
-  100%
-    transform: scaleX(0)
+  svg
+    margin-left: 10px
 </style>
