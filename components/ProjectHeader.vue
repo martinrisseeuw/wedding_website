@@ -48,17 +48,22 @@ export default {
 
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
+.loaded .container
+  background: $light-grey
+  transition: all 1.4s cubic-bezier(0.42, 0, 1, 1)
 .container
   padding: 80px 0
   width: 100%
-  background: $light-grey
   display: flex
   justify-content: flex-end
   align-items: center
 .wrapper
-  max-width: $wrapper
-  margin: initial
-  margin: 40px 150px
+  width: 100%
+  padding-right: 140px
+  margin: auto
+  display: flex
+  justify-content: flex-end
+  align-items: center
   .content
     max-width: 640px
 .bg

@@ -1,18 +1,20 @@
 <template>
     <div class="intro-container">
       <div class="wrapper lego-container">
-        <div class="col col-12-5 intro-col">
-          <div class="content">
-            <h2 class="reveal-text">Hi, we're Martim. A digital agency that crafts high quality and usable interfaces for bot you and its visitors</h2>
+        <div class="element">
+          <div class="col col-12-5 intro-col">
+            <div class="content">
+              <h2 class="reveal-text">Hi, we're Martim. A digital agency that crafts high quality and usable interfaces for both you and its visitors</h2>
+            </div>
+            <article class="intro-project fade-in">
+              <h1>Homepinr</h1>
+              <h2>A new way to find homes</h2>
+              <ArrowBtn text="View project" link="/project" />
+            </article>
           </div>
-          <article class="intro-project">
-            <h1>Homepinr</h1>
-            <h2>A new way to find homes</h2>
-            <ArrowBtn text="View project" link="/project" />
-          </article>
-        </div>
-        <div class="col-12-6 auto-left">
-          <img src="/home-image.png" />
+          <div class="col-12-6 auto-left fade-in">
+            <img src="/home-image.png" />
+          </div>
         </div>
       </div>
     </div>
@@ -28,6 +30,14 @@ export default {
       ticking: false
     }
   },
+  mounted() {
+    setTimeout(() => { 
+      document.body.classList.add('intro-loaded');
+    }, 50);
+  },
+  destroyed () {
+    document.body.classList.remove('intro-loaded');
+  },
   components: {
     ArrowBtn
   }
@@ -38,6 +48,13 @@ export default {
 @import '../assets/css/_variables.scss'
 .intro-container
   padding: 90px 0 40px
+
+.fade-in
+  opacity: 0
+  transition: opacity 1s 0.75s cubic-bezier(0.42, 0, 1, 1)
+
+.intro-loaded .fade-in
+  opacity: 1
 
 .intro-project
   padding: 40px 0
@@ -68,8 +85,7 @@ export default {
 img
   max-width: 100%
 .container
-  padding-top: 60px
-  .wrapper
+  .element
     display: flex
     flex-wrap: wrap
   .content

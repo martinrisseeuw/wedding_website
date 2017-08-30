@@ -1,6 +1,5 @@
 <template>
   <section class="container">
-
     <Navigation />
     <SidePanel :active="showSidePanel" v-on:close="handleSidePanelClose">
       <About />
@@ -22,6 +21,12 @@ export default {
     return {
       showSidePanel: false
     }
+  },
+  mounted() {
+    document.body.classList.add('loaded');
+  },
+  destroyed () {
+    document.body.classList.remove('loaded');
   },
   methods: {
     handleSidePanelClose () {
