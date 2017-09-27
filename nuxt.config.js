@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Martim',
+    title: 'Diana & Martin',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,8 +23,5 @@ module.exports = {
     '~assets/css/typography.sass',
     '~assets/css/main.sass'
   ],
-  /*
-  ** Customize the progress-bar color
-  */
   loading: false
 }

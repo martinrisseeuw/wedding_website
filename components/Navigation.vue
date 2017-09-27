@@ -1,112 +1,63 @@
 <template>
-  <div class="container" :class="{active: menuActive, projectnav: projectnav, sticky: menuSticky}">
-    <div class="wrapper no-bottom-top">
-      <div class="element">
-        <nuxt-link to="/" class="logo">
-          <h1 hidden>Martim</h1>
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 40 32">
-            <g fill-rule="evenodd" fill="currentColor">
-              <rect width="8" height="32"/>
-              <rect width="8" height="32" x="12"/>
-              <rect width="8" height="20" x="24" y="12"/>
-              <rect width="16" height="8" x="24" y="12"/>
-              <rect width="8" height="8" x="24"/>
-            </g>
-          </svg>      
-        </nuxt-link>
-        <ul class="menu">
-          <li><nuxt-link to="/about">About</nuxt-link></li>
-        </ul>
-      </div>
+  <navigation>
+    <div class="element">
+      <ul class="menu">
+        <li class="logo"><nuxt-link to="/" exact>D&M</nuxt-link></li>
+        <li><nuxt-link to="/schedule">Schedule</nuxt-link></li>
+        <li><nuxt-link to="/dresscode">Dresscode</nuxt-link></li>
+        <li><nuxt-link to="/what-to-pack">What to pack?</nuxt-link></li>
+        <li class="important"><a target="_blank" href="http://www.bodayplaya.com/reservas/dianaymartin">Reservation</a></li>
+      </ul>
     </div>
-  </div>
+  </navigation>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      last_known_scroll_position: 0,
-      menuActive: false,
-      ticking: false,
-      menuSticky: false
-    }
-  },
-  props: ['projectnav', 'stickyHeight'],
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-    changeNav (scroll_pos) {
-      if(scroll_pos > 70) {
-        this.menuActive = true;
-      } else {
-        this.menuActive = false
-      }
-      if(scroll_pos > this.stickyHeight) {
-        this.menuSticky = true;
-        document.body.classList.add('sticky-header');
-      } else {
-        this.menuSticky = false;
-        document.body.classList.remove('sticky-header');
-      }
-    },
-    handleScroll () {
-      this.last_known_scroll_position = window.scrollY;
-      if (!this.ticking) {
-        window.requestAnimationFrame(() => {
-          this.changeNav(this.last_known_scroll_position);
-          this.ticking = false;
-        });
-      }
-      this.ticking = true;
-    }
-  }
-}
-</script>
-
-<style  lang="sass">
-</style>
 
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
-.container
+navigation
   position: fixed
   z-index: 1
   left: 0
   right: 0
   top: 0
   width: 100vw
+  background: #fff
   transition: background 0.1s ease-out
   transition: 0.2s cubic-bezier(.54,0,.33,1)
-  .wrapper
-    .element
-      display: flex
-      align-items: center
+  border-bottom: 1px solid $light-grey
+  height: 50px
+  display: flex
+  align-items: center
+  justify-content: center
   &.active
     background: #fff
   &.projectnav
     position: relative
   &.sticky
     position: fixed
-.logo
-  color: rgba(0, 0, 20, 1)
-  font-size: 1em
-  transition: color 0.3s cubic-bezier(0.000, 0.000, 0.580, 1.000)
-  line-height: 0
-  &:hover
-    color: $brand-color
 .menu
-  margin-left: auto
+  .logo
+    font-family: Butler
+    font-size: 1.2em
+    top: 0.1em
   li
     display: inline-block
-    margin-left: ($gutter)
+    margin: 0 ($gutter / 2)
     a
-      color: rgba(0, 0, 20, 1)
+      color: #5D6070
       transition: color 0.3s cubic-bezier(0, 0, 0.58, 1)
+      &.nuxt-link-active,
       &:hover
         color: $brand-color
+
+  li.important
+    background: $brand-color
+    border: 1px solid #fff
+    padding: 3px 12px
+    border-radius: 40px
+    transition: all 0.1s ease-in-out
+    a
+      color: #fff
+    &:hover
+      background:  darken($brand-color, 20%)
 </style>

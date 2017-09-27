@@ -16,10 +16,9 @@ import PageContainer from '~/components/PageContainer.vue'
 export default {
   data () {
     return {
-      title: `Diana<br/>& Martin`,
-      subtitle: '19 May 2018',
-      text: `<p>We may not have it all together,<br/>but together we have it all.</p>`,
-      icon: 'home_icon.svg'
+      title: 'What <br/>to pack?',
+      text: `<p>Ofcourse we are going to a warm area so don't forget: Sunscreen, mosquito repellent</p>`,
+      icon: 'suitcase.svg'
     }
   },
   mounted() {
@@ -34,3 +33,13 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+  .container
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 50px
+    min-height: calc(100vh - 50px)
+</style>
+
