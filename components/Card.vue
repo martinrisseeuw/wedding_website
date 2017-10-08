@@ -7,7 +7,7 @@
       <h2>{{title}}</h2>
       <div class="form-row">
         <input v-model="amount" placeholder="€00.00" />
-        <a :href="payLink" class="buy">Contribute</a>
+        <a :href="payLink" class="buy" :class="{active: isActive}">Contribute</a>
       </div>
     </div>
   </div>  
@@ -23,6 +23,9 @@ export default {
   computed: {
     payLink(){
       return `https://paypal.me/Risseeuw/${this.amount}`
+    },
+    isActive(){
+      if(this.amount > 0) return true
     }
   }
 }
@@ -76,14 +79,18 @@ input
     display: inline-block
     font-weight: 600
     font-size: 16px
+    background: #f2f2f2
     color: #FFFFFF
     letter-spacing: 0.3px
-    background: #0587FF
     border-radius: 8px
     padding: 10px
     margin-top: 10px
-    box-shadow: 0 1px 3px rgba(0, 0, 0.20, 0.20)
     transition: 0.2s ease-in-out
+    pointer-events: none
+    &.active
+      background: #0587FF
+      pointer-events: initial
+      box-shadow: 0 1px 3px rgba(0, 0, 0.20, 0.20)
     &:hover
       transform: translateY(-2px)
       box-shadow: 0 2px 12px rgba(0, 0, 0.20, 0.30)
