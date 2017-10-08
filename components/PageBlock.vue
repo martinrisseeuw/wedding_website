@@ -6,7 +6,7 @@
     </header>
     <div class="main">
       <h1 v-html="title"></h1>
-      <div class="content" v-html="text"></div>
+      <div v-if="text" class="content" v-html="text"></div>
     </div>
   </div>
 </template>
@@ -31,6 +31,7 @@ export default {
   .main
     text-align: center
     max-width: 600px
+    margin: auto
   h1
     font-family: Butler
     font-size: 82px

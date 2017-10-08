@@ -6,6 +6,7 @@
         <li><nuxt-link to="/schedule">Schedule</nuxt-link></li>
         <li><nuxt-link to="/dresscode">Dresscode</nuxt-link></li>
         <li><nuxt-link to="/what-to-pack">What to pack?</nuxt-link></li>
+        <li><nuxt-link to="/registry">Registry</nuxt-link></li>
         <li class="important"><a target="_blank" href="http://www.bodayplaya.com/reservas/dianaymartin">Reservation</a></li>
       </ul>
     </div>
