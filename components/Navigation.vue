@@ -3,18 +3,35 @@
     <div class="element">
       <ul class="menu">
         <li class="logo"><nuxt-link to="/" exact>D&M</nuxt-link></li>
-        <li><nuxt-link to="/schedule">Schedule</nuxt-link></li>
-        <li><nuxt-link to="/dresscode">Dresscode</nuxt-link></li>
-        <li><nuxt-link to="/what-to-pack">What to pack?</nuxt-link></li>
-        <li><nuxt-link to="/registry">Registry</nuxt-link></li>
-        <li class="important"><a target="_blank" href="http://www.bodayplaya.com/reservas/dianaymartin">Reservation</a></li>
+        <li><nuxt-link :to="path('/schedule')">{{ $t('links.program') }}</nuxt-link></li>
+        <li><nuxt-link :to="path('/dresscode')">{{ $t('links.dresscode') }}</nuxt-link></li>
+        <li><nuxt-link :to="path('/registry')">{{ $t('links.registry') }}</nuxt-link></li>
+        <li><nuxt-link :to="path('/hotel')">{{ $t('links.hotel') }}</nuxt-link></li>
+        <li class="important"><a target="_blank" href="http://www.bodayplaya.com/reservas/dianaymartin">{{ $t('links.reservation') }}</a></li>
+        <li class="flag" v-if="this.$i18n.locale === 'en'"><nuxt-link to="/es"><span class="icon">🇲🇽</span> Español</nuxt-link></li>
+        <li class="flag" v-if="this.$i18n.locale === 'es'"><nuxt-link to="/"><span class="icon">🇬🇧</span> English</nuxt-link></li>
       </ul>
     </div>
   </navigation>
 </template>
 
+<script>
+export default {  
+  methods: {
+    path (url) {
+      return (this.$i18n.locale === 'en' ? url : '/' + this.$i18n.locale + url)
+    }
+  }
+}
+</script>
+
+
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
+.flag
+  .icon
+    top: 0.2em
+    font-size: 1.4em
 navigation
   position: fixed
   z-index: 1

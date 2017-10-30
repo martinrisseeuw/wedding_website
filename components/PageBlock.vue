@@ -7,6 +7,7 @@
     <div class="main">
       <h1 v-html="title"></h1>
       <div v-if="text" class="content" v-html="text"></div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -18,6 +19,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  .info
+    margin: auto
   @import '../assets/css/_variables.scss'
   header
     display: flex
@@ -25,6 +28,10 @@ export default {
     flex-direction: column
     text-align: center
     margin-bottom: $gutter / 1.5
+    img
+      max-width: 150px
+      max-height: 120px
+      margin: auto
     h2
       margin-top: $gutter / 4
 
@@ -50,11 +57,18 @@ export default {
 
 <style lang="sass">
 
+ul
+  text-align: left
+  padding: 30px 0
+  li
+    margin-bottom: 10px
+    color: #777
+    list-style: circle
+
 .content
   p
-    margin-bottom: 0
+    margin-bottom: 0.2em
   h2
     font-size: 1.2em
-    margin-bottom: 0.8em
 </style>
 

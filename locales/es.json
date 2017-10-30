@@ -1,0 +1,40 @@
+{
+  "links": {
+    "program": "Itinerario",
+    "hotel": "Hotel",
+    "dresscode": "Dresscode",
+    "registry": "Regalos",
+    "reservation": "Reservar"
+  },
+  "home": {
+    "title": "Diana<br/>& Martin",
+    "text": "<p>We may not have it all together,<br/>but together we have it all.</p>",
+    "subtitle": "Sábado 19 de Mayo 2018"
+  },
+  "schedule": {
+    "title": "Itinerario",
+    "subtitle": "Sábado 19 de Mayo 2018",
+    "text": "<p>16:00-17:00<br/><h2>Ceremonia Religiosa @ Capilla de Nuestra Señora del Carmen, 5ta Avenida</h2></p><p>18:00-19:00<br/> <h2>Cocktail @ Playita Il Forno, Hacienda Tres Rios Hotel</h2></p><p>19:00-00:00<br/> <h2>Recepción @Kakao Beach, Hacienda Tres Rios Hotel</h2></p>"
+  },
+  "hotel": {
+    "title": "Hotel",
+    "subtitle": "Sábado 19 de Mayo 2018",
+    "moreinfo": "More information",
+    "text": "<p>Localizado en un área de 131 hectáreas de parque natural cerca de Playa del Carmen, Hacienda Tres Ríos es un resort exclusivo frente al mar localizado en la Riviera Maya a 45 minutos al sur del aeropuerto Internacional de Cancún. El grupo de nuestra boda disfrutara de un plan todo incluido que consta de:</p><br/><p>Servicio a la habitación las 24 horas ,comidas y botanas ilimitadas en todos los restaurantes y bares, acceso exclusivo a paseos en Tres Rios Nature Park (Cenote snorkeling, kayak, hobie cat, minigolf, etc), entretenimiento nocturno y más.</p>"
+  },
+  "dresscode": {
+    "title": "Dresscode",
+    "subtitle": "Sábado 19 de Mayo 2018",
+    "text": "<p><h2>👨🏽 Men</h2> It's recommended to wear light, breathable fabrics like linen or cotton shirts.</p><br/><p><h2>👧 Women</h2> Wear comfortable and sand friendly shoes. We'll be on the beach a cocktail short or long length evening dress is perfect and remember white is reserved for the bride</p>"
+  },
+  "gifts": {
+    "title": "Regalos",
+    "subtitle": "Sábado 19 de Mayo 2018",
+    "text": "<p>Because it will be difficult to bring 🎁 back to Holland by ✈️, we kindly request not to bring any gifts to the wedding. If you want to gift something you can make a contribution for the below ⬇️.</p>"
+  },
+  "contact": {
+    "title": "Contact",
+    "contact": "Contact",    
+    "text": "<p>Cualquier duda, favor de contactar a los números siguientes:</p><p>Reservaciones  – Hacienda Tres Rios:</p><p>Berenice Zepeda +52 (984) 877 2400 ext 269</p><br/><p>Wedding Planner:</p><p>Gabriela Pedraza</p><p>gpedraza@bodayplaya.com</p><p>+52 1 81 17 03 02 82</p>"
+  }
+}

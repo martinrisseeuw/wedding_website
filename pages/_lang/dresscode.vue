@@ -6,6 +6,7 @@
       :text="text"
       :icon="icon"
     />
+    <Navigation />
   </PageContainer>
 </template>
 
@@ -16,10 +17,9 @@ import PageContainer from '~/components/PageContainer.vue'
 export default {
   data () {
     return {
-      title: `Diana<br/>& Martin`,
-      subtitle: '19 May 2018',
-      text: `<p>We may not have it all together,<br/>but together we have it all.</p>`,
-      icon: 'home_icon.svg'
+      title: this.$t('dresscode.title'),
+      text: this.$t('dresscode.text'),
+      icon: '../dresscode.svg'
     }
   },
   mounted() {
@@ -30,7 +30,7 @@ export default {
   },
   components: {
     PageBlock,
-    PageContainer,
-  }
+    PageContainer
+  },
 }
 </script>

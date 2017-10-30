@@ -6,7 +6,7 @@
     <div class="content">
       <h2>{{title}}</h2>
       <div class="form-row">
-        <input v-model="amount" placeholder="€00.00" />
+        <input v-model="amount" :placeholder="moneyPlaceholder" />
         <a :href="payLink" class="buy" :class="{active: isActive}">Contribute</a>
       </div>
     </div>
@@ -21,8 +21,21 @@ export default {
     image: String
   },
   computed: {
+    moneyPlaceholder (){
+      if(this.$i18n.locale === 'en') {
+        return '€00,00'
+      } else {
+        return '$00.00'
+      }
+    },
     payLink(){
-      return `https://paypal.me/Risseeuw/${this.amount}`
+      let currency
+      if(this.$i18n.locale === 'en') {
+        currency = 'EUR'
+      } else {
+        currency = 'MXN'
+      }
+      return `https://paypal.me/Risseeuw/${this.amount}${currency}`
     },
     isActive(){
       if(this.amount > 0) return true
@@ -58,17 +71,21 @@ input
   header
     height: 200px
     overflow: hidden
-    background-size: cover
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
     img
       display: none
   .content
     padding: 20px
+    text-align: left
     h2
       font-size: 16px
       color: #586C73
       letter-spacing: 0
       line-height: 24px
       margin-bottom: 0
+      margin-left: 3px
     p
       font-size: 16px
       color: #A3B3B8

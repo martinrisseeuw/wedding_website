@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
     ]
   },
+  build: {
+    vendor: ['vue-i18n']
+  },
   css: [
     '~assets/css/reset.sass',
     '~assets/css/_variables.scss',
@@ -23,5 +26,9 @@ module.exports = {
     '~assets/css/typography.sass',
     '~assets/css/main.sass'
   ],
-  loading: false
+  loading: false,
+  router: {
+    middleware: 'i18n'
+  },
+  plugins: ['~/plugins/i18n.js',]
 }

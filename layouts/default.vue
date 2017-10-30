@@ -10,6 +10,11 @@
 <script>
   import Navigation from '~/components/Navigation.vue'
   export default {
+     methods: {
+      path (url) {
+        return (this.$i18n.locale === 'en' ? url : '/' + this.$i18n.locale + url)
+      }
+    },
     components: {
       Navigation
     }
