@@ -4,7 +4,8 @@
     "hotel": "Hotel",
     "dresscode": "Dresscode",
     "registry": "Gifts",
-    "reservation": "Reservation"
+    "reservation": "Reservation",
+    "contact": "Contact"
   },
   "home": {
     "title": "Diana<br/>& Martin",
@@ -14,13 +15,13 @@
   "schedule": {
     "title": "Itinerary",
     "subtitle": "Saturday May 19th 2018",
-    "text": "<p>16:00-17:00<br/><h2>Religious Ceremony @ Capilla de Nuestra Señora del Carmen, 5ta Avenida</h2></p><p>18:00-19:00<br/> <h2>Cocktail @ Playita Il Forno, Hacienda Tres Rios Hotel</h2></p><p>19:00-00:00<br/> <h2>Reception @Kakao Beach, Hacienda Tres Rios Hotel</h2></p>"
+    "text": "<p>14:30-14:45</p><h2>Meet at Hotel Lobby for shuttle to church</h2><p>16:00-17:00</p><h2>Religious Ceremony @ Capilla de Nuestra Señora del Carmen, 5ta Avenida</h2><p>18:00-19:00</p><h2>Cocktail @ Playita Il Forno, Hacienda Tres Rios Hotel</h2><p>19:00-00:00</p><h2>Reception @Kakao Beach, Hacienda Tres Rios Hotel</h2>"
   },
   "hotel": {
     "title": "Hotel",
     "subtitle": "Saturday May 19th 2018",
     "moreinfo": "More information",
-    "text": "<p>Nestled in a pristine 326-acre nature park near Playa del Carmen, Hacienda Tres Ríos is a beachfront all-inclusive resort located in the Riviera Maya forty-five minutes south of Cancún’s International Airport. The wedding group will enjoy an all-inclusive plan, which offers:</p><br/><p>Included room service available 24 hours, unlimited meals and snacks in all bars and restaurants, exclusive access to activities and tours at Tres Rios Nature Park (Cenote snorkeling, kayak, hobie cat sailing, minigolf, etc), night shows and entertainment and more.</p>"
+    "text": "<p>Nestled in a pristine 326-acre nature park near Playa del Carmen, Hacienda Tres Ríos is a beachfront all-inclusive resort located in the Riviera Maya forty-five minutes south of Cancún’s International Airport. The wedding group will enjoy an all-inclusive plan, which offers:</p><br/><p>Included room service available 24 hours, unlimited meals and snacks in all bars and restaurants, exclusive access to activities and tours at Tres Rios Nature Park (Cenote snorkeling, kayak, hobie cat sailing, minigolf, etc), night shows and entertainment and more.</p><br/><p>Please make sure to secure your reservation ASAP as we have a limited amount of rooms under a preferential rate. You can request your room by clicking on the button in the menu, or by calling the hotel directly</p><br/><p>Single room - $4,100 MXN price per person per night</p><p>Double room - $2,714 price per person per night</p><p>Additional adult - $2,252</p><br/><p>Jr Suite Category</p><p>Room capacity: 3 adults and 2 kids or 2 adults and 3 kids</p><br/><p>You can secure your room by paying just one night</p><p>If you have any questions, you can contact any of the below:</p><p>Hotel reservations – Hacienda Tres Rios:</p><p>Diana Guillen +52 (998) 881 8750 ext 323</p>"
   },
   "dresscode": {
     "title": "Dresscode",

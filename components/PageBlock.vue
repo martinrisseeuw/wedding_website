@@ -70,5 +70,6 @@ ul
     margin-bottom: 0.2em
   h2
     font-size: 1.2em
+    margin-bottom: 20px
 </style>
 

@@ -7,6 +7,7 @@
         <li><nuxt-link :to="path('/dresscode')">{{ $t('links.dresscode') }}</nuxt-link></li>
         <li><nuxt-link :to="path('/registry')">{{ $t('links.registry') }}</nuxt-link></li>
         <li><nuxt-link :to="path('/hotel')">{{ $t('links.hotel') }}</nuxt-link></li>
+        <li><nuxt-link :to="path('/contact')">{{ $t('links.contact') }}</nuxt-link></li>
         <li class="important"><a target="_blank" href="http://www.bodayplaya.com/reservas/dianaymartin">{{ $t('links.reservation') }}</a></li>
         <li class="flag" v-if="this.$i18n.locale === 'en'"><nuxt-link to="/es"><span class="icon">🇲🇽</span> Español</nuxt-link></li>
         <li class="flag" v-if="this.$i18n.locale === 'es'"><nuxt-link to="/"><span class="icon">🇬🇧</span> English</nuxt-link></li>
@@ -28,6 +29,9 @@ export default {
 
 <style lang="sass" scoped>
 @import '../assets/css/_variables.scss'
+.element
+  overflow-x: scroll
+  -webkit-overflow-scrolling: touch
 .flag
   .icon
     top: 0.2em
@@ -54,6 +58,7 @@ navigation
   &.sticky
     position: fixed
 .menu
+  white-space: nowrap
   .logo
     font-family: Butler
     font-size: 1.2em

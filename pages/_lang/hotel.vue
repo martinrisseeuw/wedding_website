@@ -9,9 +9,6 @@
     <a href="http://www.haciendatresrios.com/riviera-maya-all-inclusive/" class="btn">
       {{$t('hotel.moreinfo')}}
     </a>
-    <nuxt-link :to="path('/contact')" class="btn">
-      {{$t('contact.contact')}}
-    </nuxt-link>
     </PageBlock>
   </PageContainer>
 </template>
